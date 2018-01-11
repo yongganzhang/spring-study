@@ -1,0 +1,50 @@
+搭建Spring的环境
+
+	1、创建maven 项目  jar
+	
+	2、加入Spring框架jar  [spring-context]
+	
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>4.3.9.RELEASE</version>
+		</dependency>
+		
+	3、 Spring的配置文件  spring-config.xml
+		
+		<?xml version="1.0" encoding="UTF-8"?>
+		<beans xmlns="http://www.springframework.org/schema/beans"
+		    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		    <bean id=" " class=" "></bean>
+		    
+		</beans>
+		
+     4、创建 待初始化bean对象  ，并且配置 在配置文件（spring-config.xml）
+     
+      public class Hello {
+	 	
+			public void print () {
+				System.out.println("spring hello ");
+			}
+		}
+		     
+		 在配置文件（spring-config.xml）    
+		   <bean id="hello" class="com.shsxt.demo.Hello"></bean>
+			
+	5、 测试框架
+	
+		// Spring框架加载配置文件
+	   ApplicationContext act = new ClassPathXmlApplicationContext("spring-config.xml");
+		
+	   // 获取 Spring初始化的bean
+	   Hello hello =  (Hello)act.getBean("hello");
+	   
+	   hello.print();
+	
+	
+				
+	
+	 
