@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  空构造方式 -->
+     <bean id="hello" class="com.shsxt.demo.Hello"></bean>
+     
+     <!-- 静态工厂模式 -->
+     <bean id="goodsService"  
+          class="com.shsxt.demo.StaticFactory"  factory-method="createGoodsService"></bean>
+     
+     <!-- 实例化工厂 -->
+     <bean id  =  "instanceFactory"  class = "com.shsxt.demo.InstanceFactory" > </bean>
+     <bean id="orderService" factory-bean="instanceFactory" factory-method="createOrderService"></bean>
+	
+</beans>
+		

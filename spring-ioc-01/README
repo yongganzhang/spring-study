@@ -1,0 +1,53 @@
+SpringIOC  控制反转
+ 
+ IOC控制的方式 三种
+ 
+ 	1、 空构造方式   （要求 重点意思一下）
+ 	     配置：
+ 	     <bean id = ""  class = "" > </bean>
+ 	     
+ 	  注意事项：
+ 	  	必须提供空参构造器       
+ 	
+ 	2、静态工厂模式      （一般意思）
+ 	      提供一个创建对象的静态工厂 
+ 	      
+ 	  <bean id="goodsService"  
+          class="【工厂的class】"  factory-method="[创建对象的静态方法]"></bean>
+	    示例：     
+	    <bean id="goodsService"  
+	          class="com.shsxt.demo.StaticFactory"  factory-method="createGoodsService"></bean>
+	            	
+	 	注意：
+	 	    factory-method： 一定要是一个静态的方式
+	 	    
+	 	    
+ 	    
+ 	3、动态工厂模式 （了解）
+ 	  提供一个工厂 去创建对象
+ 	  
+ 	  第一步：创建实例化工厂  并且要配置
+ 	  public class InstanceFactory {
+			public OrderService createOrderService () {
+				return new OrderService();
+			}
+	  }
+	  
+	  
+	  第二步： 配置工厂 和对象配置
+
+	  工厂初始化
+	   <bean id  =  "bean名称"  class = "工厂的类" > </bean>
+	   示例：
+	 <bean id  =  "instanceFactory"  class = "com.shsxt.demo.InstanceFactory" > </bean>
+ 	  
+ 	 初始化对象  
+ 	   <bean id="orderService" factory-bean="工厂对象的别名 " factory-method="创建对象的方法名称"></bean>
+ 	   <bean id="orderService" factory-bean="instanceFactory" factory-method="createOrderService"></bean>
+ 	  
+ 	  
+ 	
+ 		
+ 	
+ 	
+ 
