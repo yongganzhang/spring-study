@@ -1,0 +1,54 @@
+Spring 的依赖注入 { bean的 属性}
+	背景： 当我们 初始化一些 bean 必须要提供一些 属性值 ----》 属性注入
+	
+
+DI 方式
+	1. Setter 注入 （重点意思）
+	
+		第一步： 提供属性的setter方法
+		public void setUserDao(UserDao userDao) {
+			this.userDao = userDao;
+		}
+		
+		第二步： 实现配置 
+		 1. 配置 dao
+		<bean id="userDao" class="com.shsxt.demo.UserDao"></bean>
+		
+		2. 配置userService  注意 property 调用 setter方式实现
+		<bean id= "userService" class =  "com.shsxt.demo.UserService">
+			<property name="userDao" ref="userDao"></property>
+		</bean>
+			
+	       注意 ： ref 对于外部 bean的引用  （与被引用的id保持一）
+		
+	2. 构造器注入
+	
+		<!-- 第二种 构造器注入 -->
+		<bean id= "userServiceV2" class =  "com.shsxt.demo.UserServiceV2">
+			<constructor-arg index="0"  ref="userDao"></constructor-arg>
+			<constructor-arg index="1" value="印度三哥"></constructor-arg>
+		</bean>
+		
+		注意事项： 构造器注入 必须要提供一个带参数构造
+		构造器 ： 三种 形式：
+			第一、 name
+			第二、 index
+			第三、 type { 相同类型  按照 顺序注入进来 }
+
+	3. 静态工厂注入
+		参考静态工厂 和setter 注入
+	
+	4. 实例化工厂注入 
+	   实例化工厂工厂 和setter 注入
+	   
+	     
+Spring IOC（控制反转） 与  DI(依赖注入)  ----》  “相辅相成”、
+
+	IOC： 侧重bean的创建   （三种）
+	DI ：侧重bean的属性注入 （四种   --》 6种）
+ 
+	
+	
+	
+	
+
