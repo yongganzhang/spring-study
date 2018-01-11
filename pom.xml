@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>spring-demo-01</module>
+  	<module>spring-ioc-01</module>
   </modules>
   
 	<dependencies>
