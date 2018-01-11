@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="goodsService" class="com.shsxt.demo.GoodsService">
+		<!-- <constructor-arg index="0" ref="userService"></constructor-arg> -->
+		
+		<property name="userService" ref="userService"></property>
+		
+	</bean>
+
+
+	<bean id="userService" class="com.shsxt.demo.UserService">
+	
+		<!-- <constructor-arg index="0" ref="goodsService"></constructor-arg> -->
+		
+		<property name="goodsService" ref="goodsService"></property>
+	</bean>
+
+</beans>
+		
