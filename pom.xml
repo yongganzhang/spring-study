@@ -12,7 +12,8 @@
     <module>spring-di-03</module>
     <module>spring-di-04</module>
 	<module>spring-bean-scope</module>
-	<module>spring-proxy</module>
+	<module>spring-proxy</module> 
+	<module>spring-aop-01</module>
   </modules>
   
 	<dependencies>

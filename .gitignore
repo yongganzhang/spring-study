@@ -39,6 +39,13 @@
 /spring-bean-scope/.gitignore
 
 
+/spring-aop-01/.settings/
+/spring-aop-01/target/
+/spring-aop-01/.classpath
+/spring-aop-01/.project
+/spring-aop-01/.gitignore
+
+
 
 
 

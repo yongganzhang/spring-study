@@ -3,6 +3,8 @@ package com.shsxt.jdk;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class JdkHandler implements InvocationHandler {
 
@@ -28,8 +30,17 @@ public class JdkHandler implements InvocationHandler {
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
 		before();// 前置增强
+		
+		System.out.println(new SimpleDateFormat("yyyy:MM:dd HH:mm:ss").format(new Date()));
+		
 		Object invoke = method.invoke(target, args);
+		
+		Thread.sleep(2000);
+		
+		
 		after();// 后置增强
+		
+		System.out.println(new SimpleDateFormat("yyyy:MM:dd HH:mm:ss").format(new Date()));
 
 		return invoke;
 	}

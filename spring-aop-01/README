@@ -1,0 +1,22 @@
+AOP 面向切面编程
+  	处理问题： 面向一类的类 做编程
+	  
+	 aop不是Spring特有，   是 aspectj发明，
+	   但是Spring手上发扬光大了， 所以 就称为Spring的核心技术之一。
+	   	   
+案例：
+	搭建aop 
+	
+	第一：引入jar
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.9</version>
+		</dependency>
+	   
+        第二：
+        
+  	
+  	
+
+ 
