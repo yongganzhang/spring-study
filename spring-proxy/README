@@ -1,0 +1,51 @@
+代理模式：
+	1、静态代理
+	
+	2、动态代理
+		 在程序运行期创建代理对象
+	实现方式：
+		1. jdk 动态代理 （一般意思）
+		
+			步骤： 
+				第一步： 实现jdk代理结构 InvocationHandler
+				
+				第二步： 参看静态代理模式
+						代理角色 持有目标角色的引用
+						
+			        第三步：使用jdk创建代理对象
+			        public Object getProxy() {
+						return Proxy.newProxyInstance(this.getClass().getClassLoader(), // 类加载器
+								target.getClass().getInterfaces(),// 传递真实角色的接口
+								 this);
+					}
+       
+			   第四步： 重写 invoke 方法  实现代理方法的执行
+			       
+			       public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+						before();// 前置增强
+						Object invoke = method.invoke(target, args); // 注意点： 真实对象的引用
+						after();// 后置增强
+				
+						return invoke;
+					}
+						        	
+		  测试：代码
+		  		You you = new You();// 班长
+		
+					//创建代理对象
+					JdkHandler jdkHandler = new JdkHandler(you);
+					
+					Merry proxy = (Merry)jdkHandler.getProxy(); // 只能向上装换  接口的类型 （多态）
+					
+					//System.out.println(proxy);
+					proxy.merry("班长");
+					
+					proxy.hello("");
+					// 收集  方法 和参数
+		
+
+		2. cglib 动态代理 （了解） 继承模式
+		
+		
+		
+		
