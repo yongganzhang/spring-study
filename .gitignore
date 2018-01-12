@@ -34,8 +34,9 @@
 
 /spring-bean-scope/.settings/
 /spring-bean-scope/target/
-/spring-bean-scope/.classpath/
-/spring-bean-scope/.project/
+/spring-bean-scope/.classpath
+/spring-bean-scope/.project
+/spring-bean-scope/.gitignore
 
 
 
