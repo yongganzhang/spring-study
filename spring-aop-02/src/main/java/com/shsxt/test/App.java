@@ -14,5 +14,4 @@ public class App {
 		UserService service = ctx.getBean(UserService.class);// 获取proxy 对象
 		service.userLogin();
 	}
-
 }

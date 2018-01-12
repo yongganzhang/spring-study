@@ -1,8 +1,10 @@
 package com.shsxt.aspectj;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -52,7 +54,29 @@ public class LogCut {
     @AfterThrowing(value="cut()",throwing="e")
     public void afterThrowing(Exception e){
         System.out.println("异常通知....方法执行异常时执行:"+e);
+        
     }
+    
+    /**
+     * 环绕通知
+     * 	   ---->  异常 一定要上抛
+     * 
+     * @param pjp
+     * @return
+     * @throws Throwable
+     */
+    @Around("cut ()")
+    public Object arroud (ProceedingJoinPoint pjp) throws Throwable {
+    	
+    	System.out.println("环绕通知前");
+    	
+    	Object res = pjp.proceed(); // 表示拦截的方法执行     异常必须上抛
+    	
+    	System.out.println("环绕通知后");
+    	
+    	return null;
+    }
+    
     
 
 	
