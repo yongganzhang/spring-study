@@ -1,0 +1,11 @@
+@Autowired   @Resource
+
+相同点：
+	 都能实现DI的功能
+不同点：
+	1、Autowired  是Spring提供注解    Resource是jdk提供的注解 但是 Spring实现Resource的注解解析器
+	2、 @Autowired 默认按bean 的类型匹配  
+	   @Resource  默认按名称进行装配，如果名称找不到 则按照类型去匹配	   
+	   
+	推荐使用 ：@Resource 
+		
