@@ -1,0 +1,58 @@
+Bean的生命周期
+
+	Spring中会提到bean 装配   
+			1. 显示装配
+				xml 配置
+			2. 隐式装配
+				注解配置
+ 
+   【定义、初始化、使用和销毁】
+   
+   1. 定义
+    	bean  xml 配置和 注解式定义
+    	
+   2. 初始化化
+   
+   		1. 单例模式的bean  【singleton】 
+   			在Spring框架启动时候初始化bean 并且放入缓存池中
+   			
+   		2. 懒加载模式 bean 
+   		       第一次被使用的时候。 	
+   		       
+   		3. prototype bean
+   		      在每次调用的时候被初始化
+   		      
+   		4. web类的 bean
+   			request ： 每次请求
+   			session/globalSession ： 每次会话	
+   				
+  面试	 
+  	 单例模式的bean 非单例的模式属性  ？UserService 是单例还是非单例？  	 
+  	 Class UserService {
+  	 	UserDao  userDao;
+  	 }
+  	 
+ 
+ 3、 使用
+   bean在什么时候使用 
+   
+   
+ 4、销毁
+    
+    1. 单例模式的bean  【singleton】  / 懒加载模式 bean 
+   	          框架停止时候，被销毁
+   	          	       
+	2. prototype bean
+	         当使用完， bean 进入GC维护 （GC算法） 
+	      
+	3. web类的 bean
+		request ： 每次请求之后
+		session/globalSession ： 每次会话之后	
+ 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 		
+   	    

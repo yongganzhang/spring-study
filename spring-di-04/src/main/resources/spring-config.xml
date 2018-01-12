@@ -18,5 +18,9 @@
         
         <bean id = "userService"  class = "com.shsxt.demo.UserService"></bean> -->
 
+	
+	<bean id =  "" class =  "" scope="singleton"></bean>
+
+
 </beans>
 		

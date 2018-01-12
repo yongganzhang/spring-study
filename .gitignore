@@ -32,6 +32,12 @@
 /spring-di-04/.classpath/
 /spring-di-04/.project/
 
+/spring-bean-scope/.settings/
+/spring-bean-scope/target/
+/spring-bean-scope/.classpath/
+/spring-bean-scope/.project/
+
+
 
 
 
