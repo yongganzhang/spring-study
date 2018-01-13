@@ -6,8 +6,9 @@
 		<artifactId>spring-study</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-jdbc-01</artifactId>
-
+	<artifactId>spring-tx-01</artifactId>
+	
+	
 	<dependencies>
 
 		<!-- spring jdbc -->
@@ -31,5 +32,13 @@
 			<version>0.9.1.2</version>
 		</dependency>
 		
+			<!-- spring事物 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>4.3.2.RELEASE</version>
+		</dependency>
+		
 	</dependencies>
+
 </project>

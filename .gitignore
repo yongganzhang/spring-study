@@ -84,6 +84,13 @@
 /spring-jdbc-01/.gitignore
 
 
+/spring-tx-01/.settings/
+/spring-tx-01/target/
+/spring-tx-01/.classpath
+/spring-tx-01/.project
+/spring-tx-01/.gitignore
+
+
 
 
 

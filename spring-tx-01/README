@@ -1,0 +1,49 @@
+需求：
+	
+	用户使用余额购买商品 （一个事务控制）
+		--》业务流程：		 
+			 查询用户余额  ----》 判断用户的余额 满足购买 条件   （扣余额）---》 商品扣除库存 （满足扣除库存存条件）
+			 				-----》 停止购买		              ----》 停止购买（回退余额）	
+			 	
+		
+		
+	
+	 
+@Transactional(propagation=Propagation.REQUIRED) 
+如果有事务, 那么加入事务, 没有的话新建一个(默认情况下)
+
+
+@Transactional(propagation=Propagation.NOT_SUPPORTED) 
+容器不为这个方法开启事务
+@Transactional(propagation=Propagation.REQUIRES_NEW) 
+不管是否存在事务,都创建一个新的事务,原来的挂起,新的执行完毕,继续执行老的事务
+@Transactional(propagation=Propagation.MANDATORY) 
+必须在一个已有的事务中执行,否则抛出异常
+@Transactional(propagation=Propagation.NEVER) 
+必须在一个没有的事务中执行,否则抛出异常(与Propagation.MANDATORY相反)
+@Transactional(propagation=Propagation.SUPPORTS) 
+如果其他bean调用这个方法,在其他bean中声明事务,那就用事务.如果其他bean没有声明事务,那就不用事务
+
+
+面试：
+	
+	1、 聊 数据库中库事务 概念  特性 
+	2、  数据中事务 隔离级别 ？  http://blog.csdn.net/jiesa/article/details/51317164
+	
+    3、 Spring中的事务控制 ？    在数据源 上控制  
+                   概念： 
+    4、 描述出Spring事务传播机制  （6个模式 ）
+   
+   //////////////////////////////////////////////////////////////////
+   
+   将事务控制进行分类
+   	1、刚性事务
+   	          数据的强一致性 , 必须要同一时刻。
+   	          如： Spring 事务  数据库事务      
+   	
+   	2、柔性事务
+   	        数据的最终一致性 ， 跨时间节点（最终完成  事务 ）
+   	 分布式事务解决方案：
+   	 	XA  本地事务表     TCC(二次提交  ) 
+   	 	    	  
+   	 	    	  

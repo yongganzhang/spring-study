@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd ">
+
+	<!-- 加载数据配置文件 -->
+	<context:property-placeholder location="db.properties" />
+
+	<context:component-scan base-package="com.shsxt" />
+
+	<!-- 添加事务的注解驱动 -->
+	<tx:annotation-driven transaction-manager="txManager" /> <!-- 这是一个事务管理器的id -->
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<!-- 配置jdbc操作模板 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- spring 注解式事务声明 -->
+	<!-- 事务管理器定义 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+<!-- 
+	  <aop:config>
+	        <aop:pointcut expression="execution( * com.shsxt.service..*.*(..) )"
+	            id="cut" />
+	        <aop:advisor advice-ref="txAdvice" pointcut-ref="cut" />
+	    </aop:config>
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			匹配以save开头的service方法均加入事物
+			<tx:method name="save*" propagation="REQUIRED" />
+			匹配以del开头的service方法均加入事物
+			<tx:method name="del*" propagation="REQUIRED" />
+			匹配以update开头的service方法均加入事物
+			<tx:method name="update*" propagation="REQUIRED" />
+			匹配以query开头的service方法事物为只读模式
+			<tx:method name="query*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	
+ -->
+
+
+
+
+
+
+</beans>
+		

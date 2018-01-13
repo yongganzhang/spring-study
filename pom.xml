@@ -18,6 +18,7 @@
 	<module>spring-task-01</module>
 	<module>spring-rmi-01</module>  
 	<module>spring-jdbc-01</module>
+	<module>spring-tx-01</module>
   </modules>
   
 	<dependencies>
