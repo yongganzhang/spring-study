@@ -16,9 +16,8 @@
 	<module>spring-aop-01</module>
 	<module>spring-aop-02</module>
 	<module>spring-task-01</module>
-	<module>spring-rmi-01</module>
-	<module>Spring-rmi-02</module>
-	<module>Spring-rmi-api</module>
+	<module>spring-rmi-01</module>  
+	<module>spring-jdbc-01</module>
   </modules>
   
 	<dependencies>
