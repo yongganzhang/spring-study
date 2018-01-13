@@ -13,7 +13,7 @@ public class App {
 		
 		CustomerDao bean = act.getBean(CustomerDao.class);
 		
-		System.out.println(bean.queryCustomerCount());
+		System.out.println(bean.queryCustomerByCid(1));
 	}
 
 }
