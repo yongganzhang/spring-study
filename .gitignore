@@ -57,6 +57,24 @@
 /spring-task-01/.project
 /spring-task-01/.gitignore
 
+/spring-rmi-01/.settings/
+/spring-rmi-01/target/
+/spring-rmi-01/.classpath
+/spring-rmi-01/.project
+/spring-rmi-01/.gitignore
+
+
+/spring-rmi-02/.settings/
+/spring-rmi-02/target/
+/spring-rmi-02/.classpath
+/spring-rmi-02/.project
+/spring-rmi-02/.gitignore
+
+/spring-rmi-api/.settings/
+/spring-rmi-api/target/
+/spring-rmi-api/.classpath
+/spring-rmi-api/.project
+/spring-rmi-api/.gitignore
 
 
 
