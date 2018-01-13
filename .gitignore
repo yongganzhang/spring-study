@@ -48,7 +48,14 @@
 /spring-aop-02/target/
 /spring-aop-02/.classpath
 /spring-aop-02/.project
-/spring-aop-02/.gitignore
+/spring-aop-02/.gitignore 
+
+
+/spring-task-01/.settings/
+/spring-task-01/target/
+/spring-task-01/.classpath
+/spring-task-01/.project
+/spring-task-01/.gitignore
 
 
 
