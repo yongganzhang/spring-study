@@ -9,7 +9,6 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		PlatformTransactionManager
 
 		ApplicationContext act = new ClassPathXmlApplicationContext("spring-config.xml");
 
